@@ -21,5 +21,6 @@ Library
   Exposed-modules:  Control.Concurrent.MonadIO
                     Control.Concurrent.STM.MonadIO
                     Control.Concurrent.StdInOut
+                    Data.IORef.MonadIO
   Hs-Source-Dirs:   src
   Ghc-Options:      -Wall -O2
