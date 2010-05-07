@@ -30,25 +30,25 @@ available if a monad @m@ is declared an instance of the
  * Example use.
 
 Suppose you define a new monad (EIO say) which is like
-'IO' except that it provides an environment too. For example:
-  
->  newtype EIO a = EIO {useEnv :: Env -> IO a}
-
+'IO' except that it provides an environment too.
 You will need to declare EIO and instance of the 'Monad' class. In 
-addition, you can declare it in the 'MonadIO' class as follows:
-	
+addition, you can declare it in the 'MonadIO' class. For example:
+
+>  newtype EIO a = EIO {useEnv :: Env -> IO a}
+>	
 >  instance MonadIO EIO where
 >    liftIO m = EIO $ (\_ -> m)
 
 Now the standard operations on 'MVar' and 'Chan' (such as
 'newEmptyMVar', or 'putChan' are immediately available as
-EIO operations. In addition, with the declaration
+EIO operations. To enable EIO to fork explicit threads, and to
+access operations such as 'killThread' and 'threadDelay', use
+the declaration
 
 >  instance HasFork EIO where
 >    fork em = EIO $ \e -> forkIO (em `useEnv` e)
 
-operations such as 'killThread' and 'threadDelay' are available
-to EIO.
+
 
  * Notes.
 

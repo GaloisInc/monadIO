@@ -41,6 +41,7 @@ can be defined from within any MonadIO monad.
 
 
 module Control.Concurrent.STM.MonadIO (
+
     STM
   , atomically
   , always
@@ -59,9 +60,11 @@ module Control.Concurrent.STM.MonadIO (
   , registerDelay
   , modifyTVar
   , modifyTVar_
+
   , newTVarSTM
   , readTVarSTM
   , writeTVarSTM
+
 
   , S.TMVar
   , newTMVar
@@ -75,6 +78,7 @@ module Control.Concurrent.STM.MonadIO (
   , isEmptyTMVar
   , modifyTMVar 
   , modifyTMVar_ 
+
   , newTMVarSTM
   , newEmptyTMVarSTM
   , takeTMVarSTM
@@ -95,7 +99,7 @@ import GHC.Conc (readTVarIO)
 
 
 -------------------------------------------------------------------------
--- The atomically function allows STM to be called directly from any
+-- | The atomically function allows STM to be called directly from any
 -- monad which contains IO, i.e. is a member of MonadIO.
 
 atomically :: MonadIO io => STM a -> io a
@@ -118,7 +122,7 @@ writeTVar t x = liftIO $ S.atomically $ S.writeTVar t x
 registerDelay :: MonadIO io => Int -> io (TVar Bool)
 registerDelay n = liftIO $ S.registerDelay n
 
--- modifyTVar is an atomic update operation which provides both
+-- | 'modifyTVar' is an atomic update operation which provides both
 -- the former value and the newly computed value as a result.
 
 modifyTVar :: MonadIO io => TVar a -> (a -> a) -> io (a,a)
