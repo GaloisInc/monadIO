@@ -117,7 +117,7 @@ readTVar     :: MonadIO io => TVar a -> io a
 readTVar t    = liftIO $ readTVarIO t
 
 writeTVar    :: MonadIO io => TVar a -> a -> io ()
-writeTVar t x = liftIO $ S.atomically $ S.writeTVar t x
+writeTVar t x = atomically $ writeTVarSTM t x
 
 registerDelay :: MonadIO io => Int -> io (TVar Bool)
 registerDelay n = liftIO $ S.registerDelay n
