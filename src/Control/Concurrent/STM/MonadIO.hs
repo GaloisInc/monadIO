@@ -51,8 +51,6 @@ module Control.Concurrent.STM.MonadIO (
   , check 
   , catchSTM 
 
-  , MonadIO(..)
-  
   , S.TVar
   , newTVar
   , readTVar

@@ -1,5 +1,5 @@
 name:               monadIO
-version:            0.9.0.0
+version:            0.9.1.0
 synopsis:           Overloading of concurrency variables
 description:        MonadIO provides for many IO operations to be
                     overloaded over other IO-like monads.
