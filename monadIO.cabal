@@ -14,7 +14,7 @@ build-type:         Simple
 
 
 Library
-  Build-Depends:    base >= 4.2.0.0 && <= 4.3,
+  Build-Depends:    base >= 4.2.0.0 && <= 4.4,
                     stm  >= 2.1.0.0 && <= 2.2,
                     mtl  >= 1.1.0.0 && <= 1.2
   Exposed-modules:  Control.Concurrent.MonadIO
