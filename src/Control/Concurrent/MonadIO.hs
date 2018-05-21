@@ -88,7 +88,6 @@ module Control.Concurrent.MonadIO (
   , readChan
   , dupChan
   , unGetChan
-  , isEmptyChan
   , getChanContents
   , writeList2Chan
   
@@ -155,9 +154,6 @@ dupChan c           = liftIO $ C.dupChan c
 
 unGetChan          :: MonadIO io => C.Chan a -> a -> io ()
 unGetChan c x       = liftIO $ unGetChan c x
-
-isEmptyChan        :: MonadIO io => C.Chan a -> io Bool
-isEmptyChan c       = liftIO $ C.isEmptyChan c
 
 getChanContents    :: MonadIO io => C.Chan a -> io [a]
 getChanContents c   = liftIO $ C.getChanContents c

@@ -1,5 +1,5 @@
 name:               monadIO
-version:            0.10.1.4
+version:            0.11.0.0
 synopsis:           Overloading of concurrency variables
 description:        MonadIO provides for many IO operations to be
                     overloaded over other IO-like monads.
@@ -7,8 +7,8 @@ category:           Concurrency
 license:            BSD3
 license-file:       LICENSE
 author:             John Launchbury
-maintainer:         John Launchbury
-Copyright:          (c) 2008-2010, Galois, Inc.
+maintainer:         Thomas M. DuBuisson
+Copyright:          (c) 2008-2018, Galois, Inc.
 cabal-version:      >= 1.2.0
 build-type:         Simple
 
@@ -23,3 +23,7 @@ Library
                     Data.IORef.MonadIO
   Hs-Source-Dirs:   src
   Ghc-Options:      -Wall
+
+source-repository head
+    type:       git
+    location:   https://github.com/GaloisInc/monadIO
