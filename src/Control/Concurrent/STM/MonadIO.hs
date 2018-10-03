@@ -44,12 +44,10 @@ module Control.Concurrent.STM.MonadIO (
 
     STM
   , atomically
-  , always
-  , alwaysSucceeds
-  , retry 
-  , orElse 
-  , check 
-  , catchSTM 
+  , retry
+  , orElse
+  , check
+  , catchSTM
 
   , S.TVar
   , newTVar
@@ -74,8 +72,8 @@ module Control.Concurrent.STM.MonadIO (
   , tryTakeTMVar
   , tryPutTMVar
   , isEmptyTMVar
-  , modifyTMVar 
-  , modifyTMVar_ 
+  , modifyTMVar
+  , modifyTMVar_
 
   , newTMVarSTM
   , newEmptyTMVarSTM
